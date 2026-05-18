@@ -3,47 +3,128 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
+    <title>Contacto | SaborSano</title>
+
+    <link rel="stylesheet" href="style.css" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.jade.min.css"
     />
-    <title>SaborSano</title>
+    <link rel="stylesheet" href="css/contacto.css" />
   </head>
   <body>
-    <main class="container">
-      <h1>Contacta con nosotros</h1>
-      <form>
-        <fieldset>
-          <label>
-            Nombre
-            <input
-              name="first_name"
-              placeholder="Introduce tu nombre"
-              autocomplete="given-name"
-            />
-          </label>
-          <label>
-            Email
-            <input
-              type="email"
-              name="email"
-              placeholder="Introduce tu email"
-              autocomplete="email"
-            />
-          </label>
-          <label>
-            Descripción
-            <textarea
-              name="bio"
-              placeholder="Cuentanos lo que quieras ✨"
-              aria-label="Professional short bio"
-            ></textarea>
-          </label>
-        </fieldset>
+    <div class="page">
+      <header>
+        <nav class="nav-bar" aria-label="Navegación principal">
+          <div class="nav-logo">VEGAN</div>
+          <div class="nav-links">
+            <a href="indexPrueba.html">Inicio</a>
+            <a href="informacion.html">Información</a>
+            <a href="tips.html">Tips</a>
+            <a href="recetas.html">Recetas</a>
+            <a href="contacto.html" class="is-active">Contacto</a>
+          </div>
+        </nav>
+      </header>
 
-        <input type="submit" value="Enviar" />
-      </form>
-    </main>
+      <main>
+        <section class="contact-layout" aria-labelledby="contact-title">
+          <div class="contact-card">
+            <div class="contact-header">
+              <h1 id="contact-title">Hablemos de tu bienestar</h1>
+              <p>
+                Déjanos tus datos y tu mensaje, y nuestro equipo se pondrá en contacto contigo para ayudarte con
+                pedidos, productos o colaboraciones.
+              </p>
+            </div>
+
+            <form>
+              <label>
+                Nombre completo
+                <input
+                  name="first_name"
+                  placeholder="Introduce tu nombre"
+                  autocomplete="given-name"
+                  required
+                />
+              </label>
+
+              <label>
+                Correo electrónico
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="correo@ejemplo.com"
+                  autocomplete="email"
+                  required
+                />
+              </label>
+
+              <label>
+                Asunto
+                <input
+                  name="subject"
+                  placeholder="Pedido, producto, consulta..."
+                  autocomplete="off"
+                />
+              </label>
+
+              <label>
+                Mensaje
+                <textarea
+                  name="message"
+                  placeholder="Cuéntanos lo que necesitas ✨"
+                  aria-label="Mensaje de contacto"
+                  required
+                ></textarea>
+              </label>
+
+              <div class="form-footer">
+                <p class="helper-text">
+                  Respondemos normalmente en menos de 24 horas hábiles.
+                </p>
+                <button type="submit">
+                  Enviar mensaje
+                  <span aria-hidden="true">➜</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <aside class="contact-aside">
+            <div>
+              <h2>También puedes encontrarnos aquí</h2>
+              <p>
+                Si prefieres un contacto más directo, estas son nuestras vías habituales para consultas rápidas y
+                soporte de pedidos.
+              </p>
+            </div>
+
+            <ul class="contact-info-list">
+              <li><span>Email:</span> hola@saborsano.com</li>
+              <li><span>Teléfono:</span> +51 999 888 777</li>
+              <li><span>Horario:</span> Lunes a viernes, 9:00 - 18:00</li>
+            </ul>
+
+            <div class="contact-tags">
+              <span class="chip">Consultas de productos</span>
+              <span class="chip">Pedidos personalizados</span>
+              <span class="chip">Alianzas y colaboraciones</span>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <footer>
+        ©
+        <span id="year"></span>
+        Sabor Sano · Cuidando de ti cada día.
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
